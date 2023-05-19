@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'dev.android.monique.franca.app.lista.app_lista_curso'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "dev.android.monique.franca.app.lista.app_lista_curso"
