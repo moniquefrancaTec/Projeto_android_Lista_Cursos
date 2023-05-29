@@ -11,9 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import dev.android.monique.franca.app.lista.app_lista_curso.controller.PessoaController;
 import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class MainActivity extends AppCompatActivity {
+
+    PessoaController controller;
 
     Pessoas_Curso pessoa;
     Pessoas_Curso outraPessoa;
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+       controller = new PessoaController();
+       controller.toString();
 
         pessoa = new Pessoas_Curso();
         pessoa.setNomeAluno("Monique");
@@ -76,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 outraPessoa.setTelefoneContato(editTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos com sucesso " + outraPessoa.toString(), Toast.LENGTH_LONG).show();
+                controller.salvar(outraPessoa);
             }
         });
 
