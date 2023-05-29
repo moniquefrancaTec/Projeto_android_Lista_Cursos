@@ -3,12 +3,14 @@ package dev.android.monique.franca.app.lista.app_lista_curso;
 import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_main;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +18,6 @@ public class MainActivity extends AppCompatActivity {
     Pessoas_Curso pessoa;
     Pessoas_Curso outraPessoa;
 
-    String dadosPessoa;
-    String dadosOutraPessoa;
 
     EditText editNome;
     EditText editSobrenome;
@@ -40,10 +40,7 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setTelefoneContato("389999999");
 
         outraPessoa = new Pessoas_Curso();
-        /*outraPessoa.setNomeAluno("David");
-        outraPessoa.setSobrenomeAluno("Fonseca");
-        outraPessoa.setNomeCursoDesejado("Desenho");
-        outraPessoa.setTelefoneContato("3499999999");*/
+
 
         editNome = findViewById(R.id.text_Primeiro_nome);
         editSobrenome = findViewById(R.id.text_sobrenome);
@@ -78,26 +75,17 @@ public class MainActivity extends AppCompatActivity {
                 outraPessoa.setNomeCursoDesejado(editNomedoCurso.getText().toString());
                 outraPessoa.setTelefoneContato(editTelefone.getText().toString());
 
-                Toast.makeText(MainActivity.this,"Dados salvos com sucesso " + outraPessoa.toString(),Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Dados salvos com sucesso " + outraPessoa.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
         btnbuton_finalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this,"Volte sempre pessoa", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte sempre pessoa", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
-
-
-
-        /*Pessoas_Curso pessoas = new Pessoas_Curso();
-        pessoas.setNomeAluno("Monique");
-        pessoas.setSobrenomeAluno("Franca");
-        pessoas.setNomeCursoDesejado("Fisica");
-        pessoas.setTelefoneContato("389999999");*/
-
 
 
     }
