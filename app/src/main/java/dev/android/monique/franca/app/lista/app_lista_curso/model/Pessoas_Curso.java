@@ -9,11 +9,11 @@ public class Pessoas_Curso {
     public Pessoas_Curso() {
     }
 
-    public Pessoas_Curso(String nomeAluno,String sobrenomeAluno,String nomeCursoDesejado, String telefoneContato){
+    public Pessoas_Curso(String nomeAluno, String sobrenomeAluno, String nomeCursoDesejado, String telefoneContato) {
         this.nomeAluno = nomeAluno;
-        this.sobrenomeAluno =sobrenomeAluno;
-        this.nomeCursoDesejado=nomeCursoDesejado;
-        this.telefoneContato =telefoneContato;
+        this.sobrenomeAluno = sobrenomeAluno;
+        this.nomeCursoDesejado = nomeCursoDesejado;
+        this.telefoneContato = telefoneContato;
     }
 
     public String getNomeAluno() {
