@@ -48,13 +48,17 @@ public class MainActivity extends AppCompatActivity {
        controller = new PessoaController();
        controller.toString();
 
-        pessoa = new Pessoas_Curso();
+       /* pessoa = new Pessoas_Curso();
         pessoa.setNomeAluno("Monique");
         pessoa.setSobrenomeAluno("Franca");
         pessoa.setNomeCursoDesejado("Fisica");
-        pessoa.setTelefoneContato("389999999");
+        pessoa.setTelefoneContato("389999999");*/
 
         outraPessoa = new Pessoas_Curso();
+        outraPessoa.setNomeAluno(preferences.getString("primeiroNome",""));
+        outraPessoa.setSobrenomeAluno(preferences.getString("sobrenome",""));
+        outraPessoa.setNomeCursoDesejado(preferences.getString("nomeCurso",""));
+        outraPessoa.setTelefoneContato(preferences.getString("telefoneContato",""));
 
 
         editNome = findViewById(R.id.text_Primeiro_nome);
@@ -66,10 +70,15 @@ public class MainActivity extends AppCompatActivity {
         btnbuton_salvar = findViewById(R.id.button_salvar);
         btnbuton_finalizar = findViewById(R.id.button_finalizar);
 
-        editNome.setText(pessoa.getNomeAluno());
+       /* editNome.setText(pessoa.getNomeAluno());
         editSobrenome.setText(pessoa.getSobrenomeAluno());
         editNomedoCurso.setText(pessoa.getNomeCursoDesejado());
-        editTelefone.setText(pessoa.getTelefoneContato());
+        editTelefone.setText(pessoa.getTelefoneContato());*/
+
+        editNome.setText(outraPessoa.getNomeAluno());
+        editSobrenome.setText(outraPessoa.getSobrenomeAluno());
+        editNomedoCurso.setText(outraPessoa.getNomeCursoDesejado());
+        editTelefone.setText(outraPessoa.getTelefoneContato());
 
         btnbuton_limpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Dados salvos com sucesso " + outraPessoa.toString(), Toast.LENGTH_LONG).show();
                 listavip.putString("primeiroNome", outraPessoa.getNomeAluno());
                 listavip.putString("sobrenome", outraPessoa.getSobrenomeAluno());
-                listavip.putString("nomeCurso", outraPessoa.getTelefoneContato());
+                listavip.putString("nomeCurso",outraPessoa.getNomeCursoDesejado());
+                listavip.putString("telefoneContato", outraPessoa.getTelefoneContato());
                 listavip.apply();
                 controller.salvar(outraPessoa);
             }
