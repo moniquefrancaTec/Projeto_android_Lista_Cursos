@@ -3,7 +3,9 @@ package dev.android.monique.franca.app.lista.app_lista_curso;
 import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_main;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.SharedPreferencesKt;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +17,10 @@ import dev.android.monique.franca.app.lista.app_lista_curso.controller.PessoaCon
 import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences preferences;
+
+    public static final String NOME_REFERENCES = "pref_listavip";
 
     PessoaController controller;
 
@@ -35,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        preferences = getSharedPreferences(NOME_REFERENCES,0);
+        SharedPreferences.Editor listavip = preferences.edit();
 
        controller = new PessoaController();
        controller.toString();
@@ -82,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 outraPessoa.setTelefoneContato(editTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos com sucesso " + outraPessoa.toString(), Toast.LENGTH_LONG).show();
+                listavip.putString("primeiroNome", outraPessoa.getNomeAluno());
+                listavip.putString("sobrenome", outraPessoa.getSobrenomeAluno());
+                listavip.putString("nomeCurso", outraPessoa.getTelefoneContato());
+                listavip.apply();
                 controller.salvar(outraPessoa);
             }
         });
