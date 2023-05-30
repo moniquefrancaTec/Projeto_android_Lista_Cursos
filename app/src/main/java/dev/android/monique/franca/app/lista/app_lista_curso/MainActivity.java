@@ -19,6 +19,7 @@ import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 public class MainActivity extends AppCompatActivity {
 
     SharedPreferences preferences;
+    SharedPreferences.Editor listavip;
 
     public static final String NOME_REFERENCES = "pref_listavip";
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         preferences = getSharedPreferences(NOME_REFERENCES,0);
-        SharedPreferences.Editor listavip = preferences.edit();
+        listavip = preferences.edit();
 
        controller = new PessoaController();
        controller.toString();
@@ -87,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                 editSobrenome.setText("");
                 editNomedoCurso.setText("");
                 editTelefone.setText("");
+
+                listavip.clear();
+                listavip.apply();
             }
         });
 
