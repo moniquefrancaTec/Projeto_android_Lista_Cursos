@@ -18,10 +18,10 @@ import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class MainActivity extends AppCompatActivity {
 
-    SharedPreferences preferences;
+   /* SharedPreferences preferences;
     SharedPreferences.Editor listavip;
 
-    public static final String NOME_REFERENCES = "pref_listavip";
+    public static final String NOME_REFERENCES = "pref_listavip";*/
 
     PessoaController controller;
 
@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        preferences = getSharedPreferences(NOME_REFERENCES,0);
-        listavip = preferences.edit();
+       /* preferences = getSharedPreferences(NOME_REFERENCES,0);
+        listavip = preferences.edit();*/
 
-       controller = new PessoaController();
+       controller = new PessoaController(MainActivity.this);
        controller.toString();
 
        /* pessoa = new Pessoas_Curso();
@@ -56,10 +56,11 @@ public class MainActivity extends AppCompatActivity {
         pessoa.setTelefoneContato("389999999");*/
 
         outraPessoa = new Pessoas_Curso();
-        outraPessoa.setNomeAluno(preferences.getString("primeiroNome",""));
+        controller.buscar(outraPessoa);
+        /*outraPessoa.setNomeAluno(preferences.getString("primeiroNome",""));
         outraPessoa.setSobrenomeAluno(preferences.getString("sobrenome",""));
         outraPessoa.setNomeCursoDesejado(preferences.getString("nomeCurso",""));
-        outraPessoa.setTelefoneContato(preferences.getString("telefoneContato",""));
+        outraPessoa.setTelefoneContato(preferences.getString("telefoneContato",""));*/
 
 
         editNome = findViewById(R.id.text_Primeiro_nome);
@@ -89,8 +90,8 @@ public class MainActivity extends AppCompatActivity {
                 editNomedoCurso.setText("");
                 editTelefone.setText("");
 
-                listavip.clear();
-                listavip.apply();
+                /*listavip.clear();
+                listavip.apply();*/
             }
         });
 
@@ -104,11 +105,11 @@ public class MainActivity extends AppCompatActivity {
                 outraPessoa.setTelefoneContato(editTelefone.getText().toString());
 
                 Toast.makeText(MainActivity.this, "Dados salvos com sucesso " + outraPessoa.toString(), Toast.LENGTH_LONG).show();
-                listavip.putString("primeiroNome", outraPessoa.getNomeAluno());
+                /*listavip.putString("primeiroNome", outraPessoa.getNomeAluno());
                 listavip.putString("sobrenome", outraPessoa.getSobrenomeAluno());
                 listavip.putString("nomeCurso",outraPessoa.getNomeCursoDesejado());
                 listavip.putString("telefoneContato", outraPessoa.getTelefoneContato());
-                listavip.apply();
+                listavip.apply();*/
                 controller.salvar(outraPessoa);
             }
         });
@@ -120,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        Log.i("proframacaoPOO",outraPessoa.toString());
 
     }
 

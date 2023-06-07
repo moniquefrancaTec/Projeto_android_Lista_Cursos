@@ -47,6 +47,16 @@ public class Pessoas_Curso {
     public void setTelefoneContato(String telefoneContato) {
         this.telefoneContato = telefoneContato;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoas_Curso{" +
+                "nomeAluno='" + nomeAluno + '\'' +
+                ", sobrenomeAluno='" + sobrenomeAluno + '\'' +
+                ", nomeCursoDesejado='" + nomeCursoDesejado + '\'' +
+                ", telefoneContato='" + telefoneContato + '\'' +
+                '}';
+    }
 }
 
 
