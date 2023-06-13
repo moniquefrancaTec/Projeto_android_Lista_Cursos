@@ -47,39 +47,26 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_telefone_contato"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Primeiro_nome" />
-
-    <EditText
-        android:id="@+id/text_curso_desejado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:hint="@string/txt_hint_edit_Curso_desejado"
-        android:importantForAutofill="no"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_sobrenome" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Primeiro_nome"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/text_telefone_contato"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="@string/txt_hint_edit_Telefone_Contato"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_curso_desejado" />
+        app:layout_constraintTop_toBottomOf="@+id/text_Primeiro_nome" />
 
     <Button
         android:id="@+id/button_limpar"
@@ -114,5 +101,27 @@
         android:text="@string/txt_Button_Salvar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_telefone_contato" />
+
+    <Spinner
+        android:id="@+id/txtListaSpinner"
+        android:layout_width="221dp"
+        android:layout_height="43dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_telefone_contato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_selecioneCurso" />
+
+    <TextView
+        android:id="@+id/txt_selecioneCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/txt_selecioneCurso"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/text_telefone_contato"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_sobrenome"
+        app:layout_constraintVertical_bias="0.264" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
