@@ -1,6 +1,7 @@
 package dev.android.monique.franca.app.lista.app_lista_curso;
 
 import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_main;
+import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.SharedPreferencesKt;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_main);
+        setContentView(activity_spinner);
 
        /* preferences = getSharedPreferences(NOME_REFERENCES,0);
         listavip = preferences.edit();*/
