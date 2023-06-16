@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     Pessoas_Curso pessoa;
     Pessoas_Curso outraPessoa;
-    List<Curso> listaCursos;
+    List<String> nomeDoCurso;
 
     CursoController cursoController;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editSobrenome;
     EditText editNomedoCurso;
     EditText editTelefone;
-    Spinner nomeCurso;
+    Spinner spinner;
 
     Button btnbuton_limpar;
     Button btnbuton_salvar;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         cursoController = new CursoController();
         /*nomeCurso = findViewById(R.id.txtListaSpinner);*/
 
-        listaCursos = cursoController.getListaCursos();
+        nomeDoCurso = cursoController.dadosSpinner();
 
         outraPessoa = new Pessoas_Curso();
         controller.buscar(outraPessoa);
@@ -83,16 +83,20 @@ public class MainActivity extends AppCompatActivity {
         outraPessoa.setTelefoneContato(preferences.getString("telefoneContato",""));*/
 
 
-
-
         editNome = findViewById(R.id.text_Primeiro_nome);
         editSobrenome = findViewById(R.id.text_sobrenome);
         /*editNomedoCurso = findViewById(R.id.text_curso_desejado);*/
         editTelefone = findViewById(R.id.text_telefone_contato);
+        spinner =findViewById(R.id.txtListaSpinner);
 
         btnbuton_limpar = findViewById(R.id.button_limpar);
         btnbuton_salvar = findViewById(R.id.button_salvar);
         btnbuton_finalizar = findViewById(R.id.button_finalizar);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,cursoController.dadosSpinner());
+
+        adapter.setDropDownViewResource(android.R.layout.simple_list_item_1);
+        spinner.setAdapter(adapter);
 
        /* editNome.setText(pessoa.getNomeAluno());
         editSobrenome.setText(pessoa.getSobrenomeAluno());
