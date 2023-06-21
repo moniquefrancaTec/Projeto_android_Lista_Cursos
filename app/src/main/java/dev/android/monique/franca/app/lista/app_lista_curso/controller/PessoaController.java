@@ -1,15 +1,11 @@
 package dev.android.monique.franca.app.lista.app_lista_curso.controller;
 
-import static androidx.core.content.res.TypedArrayUtils.getText;
-
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import dev.android.monique.franca.app.lista.app_lista_curso.MainActivity;
+import dev.android.monique.franca.app.lista.app_lista_curso.view.MainActivity;
 import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class PessoaController {

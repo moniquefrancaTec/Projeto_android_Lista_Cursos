@@ -1,30 +1,24 @@
-package dev.android.monique.franca.app.lista.app_lista_curso;
+package dev.android.monique.franca.app.lista.app_lista_curso.view;
 
-import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_main;
 import static dev.android.monique.franca.app.lista.app_lista_curso.R.layout.activity_spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.SharedPreferencesKt;
 
 import android.annotation.SuppressLint;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import dev.android.monique.franca.app.lista.app_lista_curso.R;
 import dev.android.monique.franca.app.lista.app_lista_curso.controller.CursoController;
 import dev.android.monique.franca.app.lista.app_lista_curso.controller.PessoaController;
-import dev.android.monique.franca.app.lista.app_lista_curso.model.Curso;
 import dev.android.monique.franca.app.lista.app_lista_curso.model.Pessoas_Curso;
 
 public class MainActivity extends AppCompatActivity {
@@ -114,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 editNome.setText("");
                 editSobrenome.setText("");
-                editNomedoCurso.setText("");
                 editTelefone.setText("");
 
                 /*listavip.clear();
