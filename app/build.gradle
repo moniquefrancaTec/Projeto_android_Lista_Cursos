@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'dev.android.monique.franca.app.lista.app_lista_curso'
+    namespace 'dev.android.monique.franca.app.lista.appgaseta'
     compileSdk 33
 
     defaultConfig {
-        applicationId "dev.android.monique.franca.app.lista.app_lista_curso"
+        applicationId "dev.android.monique.franca.app.lista.appgaseta"
         minSdk 26
         targetSdk 32
         versionCode 1

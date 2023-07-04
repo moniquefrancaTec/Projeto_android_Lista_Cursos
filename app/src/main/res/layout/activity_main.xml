@@ -28,7 +28,7 @@
         android:layout_margin="16dp"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:hint="@string/txt_hint_edit_Primeiro_nome"
+        android:hint="@string/txt_hint_edit_gasolina"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:minHeight="48dp"

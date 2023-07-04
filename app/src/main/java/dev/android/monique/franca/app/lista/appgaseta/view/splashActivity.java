@@ -1,4 +1,4 @@
-package dev.android.monique.franca.app.lista.app_lista_curso.view;
+package dev.android.monique.franca.app.lista.appgaseta.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
-import dev.android.monique.franca.app.lista.app_lista_curso.R;
+import dev.android.monique.franca.app.lista.appgaseta.R;
 
 public class splashActivity extends AppCompatActivity {
 
